@@ -1,33 +1,21 @@
 <template>
     <div>
         <nuxt-link to="/jokes">&lt;&lt;&nbsp;Back</nuxt-link>
-        <h3>{{ joke }}</h3>
-        <small>Joke ID: {{ $route.params.id }}</small>
+        <h3>{{ currentJoke.joke }}</h3>
+        <small>Joke ID: {{ currentJoke.id }}</small>
     </div>
 </template>
 
 <script>
 import axios from 'axios';
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
-    data() {
-        return {
-            joke: undefined,
-        }
-    },
     created() {
-        const config = {
-            headers: {
-                Accept: 'application/json'
-            }
-        };
-        axios.get(`https://icanhazdadjoke.com/j/${this.$route.params.id}`, config)
-            .then( res => {
-                this.joke = res.data.joke;
-            })
-            .catch( err => {
-                console.error(err);
-            });
-    }
+        this.fetchJoke(this.$route.params.id);
+    },
+    computed: mapGetters({ currentJoke: 'jokes/currentJoke' }),
+    methods: mapActions({ fetchJoke: 'jokes/fetchJoke' }),
+
 }
 </script>

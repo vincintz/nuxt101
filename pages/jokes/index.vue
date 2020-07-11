@@ -1,7 +1,7 @@
 <template>
     <div>
         <SearchJokes v-on:search-text="searchText" />
-        <Joke v-for="joke in jokes"
+        <Joke v-for="joke in allJokes"
                 :key="joke.id"
                 :id="joke.id"
                 :joke="joke.joke" />
@@ -12,41 +12,23 @@
 import axios from 'axios';
 import Joke from '../../components/Joke';
 import SearchJokes from '../../components/SearchJokes';
-
-const config = {
-    headers: {
-        Accept: 'application/json'
-    }
-};
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
     components: {
         Joke,
         SearchJokes,
     },
-    data() {
-        return {
-            jokes: [],
-        }
-    },
     created() {
-        axios.get('https://icanhazdadjoke.com/search', config)
-            .then(res => {
-                this.jokes = res.data.results;
-            })
-            .catch(err => {
-                console.log("Error")
-            });
+        this.fetchJokes();
     },
+    computed: mapGetters({ allJokes: 'jokes/allJokes' }),
     methods: {
+        ...mapActions({
+            fetchJokes: 'jokes/fetchJokes'
+        }),
         searchText(text) {
-            axios.get(`https://icanhazdadjoke.com/search?term=${text}`, config)
-                .then(res => {
-                    this.jokes = res.data.results;
-                })
-                .catch(err => {
-                    console.log(err);
-                });
+            this.fetchJokes(text);
         }
     },
     head() {
