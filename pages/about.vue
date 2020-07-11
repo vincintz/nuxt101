@@ -1,14 +1,15 @@
 <template>
-	<div class="container">
-		<h2>Welcome to DadJokes</h2>
-	</div>
+    <div>
+        <h1>Dad Jokes</h1>
+        <p>This is a website... I think.</p>
+    </div>
 </template>
 
 <script>
 export default {
     head() {
         return {
-            title: "DadJokes",
+            title: "About DadJokes",
             meta: [
                 {
                     hid: "description",
