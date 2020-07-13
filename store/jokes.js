@@ -8,7 +8,7 @@ const config = {
 
 export const state = () => ({
     jokes: [],
-    joke: undefined,
+    joke: '',
 });
 
 export const getters = {

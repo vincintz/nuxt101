@@ -16,6 +16,17 @@ export default {
     },
     computed: mapGetters({ currentJoke: 'jokes/currentJoke' }),
     methods: mapActions({ fetchJoke: 'jokes/fetchJoke' }),
-
+    head() {
+        return {
+            title: `NUXT101 - ${this.currentJoke.id}`,
+            meta: [
+                {
+                    hid: "description",
+                    name: "description",
+                    content: "Best place for corny dad jokes"
+                }
+            ]
+        }
+    }
 }
 </script>

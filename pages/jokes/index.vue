@@ -33,7 +33,7 @@ export default {
     },
     head() {
         return {
-            title: "DadJokes",
+            title: "NUXT101 - Jokes",
             meta: [
                 {
                     hid: "description",

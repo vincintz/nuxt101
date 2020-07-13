@@ -9,7 +9,7 @@
 export default {
     head() {
         return {
-            title: "About DadJokes",
+            title: "NUXT101 - About",
             meta: [
                 {
                     hid: "description",

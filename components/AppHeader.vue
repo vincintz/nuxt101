@@ -1,6 +1,6 @@
 <template>
     <header class="header">
-        <h1 class="title">DadJokes</h1>
+        <h1 class="title">NUXT101</h1>
         <ul>
             <li><nuxt-link to="/">Home</nuxt-link></li>
             <li><nuxt-link to="/jokes">Jokes</nuxt-link></li>

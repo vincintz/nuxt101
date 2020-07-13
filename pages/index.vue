@@ -1,6 +1,6 @@
 <template>
 	<div class="container">
-		<h2>Welcome to DadJokes</h2>
+		<p>Small webapplication to test nuxtjs</p>
 	</div>
 </template>
 
@@ -8,7 +8,7 @@
 export default {
     head() {
         return {
-            title: "DadJokes",
+            title: "NUXT101",
             meta: [
                 {
                     hid: "description",
