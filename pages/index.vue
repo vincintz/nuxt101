@@ -6,6 +6,10 @@
 
 <script>
 export default {
+    created() {
+        const c = document.cookie;
+        console.log(c);
+    },
     head() {
         return {
             title: "NUXT101",
