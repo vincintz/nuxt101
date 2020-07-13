@@ -7,8 +7,8 @@
 <script>
 export default {
     created() {
-        const c = document.cookie;
-        console.log(c);
+        // const c = document.cookie;
+        // console.log(c);
     },
     head() {
         return {
