@@ -11,7 +11,7 @@ Vagrant.configure("2") do |config|
     # VirtualBox Provider Settings
     config.vm.provider "virtualbox" do |vb|
       vb.name = "nuxt101"
-      vb.memory = "2048"
+      vb.memory = "1024"
     end
 
     # Shell Provision Settings
