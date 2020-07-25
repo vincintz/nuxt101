@@ -1,7 +1,7 @@
-<template>
-    <nuxt-link :to="`jokes/${id}`">
+<template functional>
+    <nuxt-link :to="`jokes/${props.id}`">
         <div class="joke">
-            <p>{{ joke }}</p>
+            <p>{{ props.joke }}</p>
         </div>
     </nuxt-link>
 </template>
