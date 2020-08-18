@@ -23,7 +23,7 @@ export default {
     ],
 
     plugins: [
-        '~/plugins/fontawesome.js'
+        '~/plugins/fontawesome.js',
     ],
 
     components: true,
@@ -32,7 +32,13 @@ export default {
     ],
 
     modules: [
-        '@nuxtjs/axios'
+        '@nuxtjs/axios',
+        [
+            'nuxt-gmaps', {
+                key: 'AIzaSyCjvzJYAjYOYsObJ1HWB6hCdJIuZbRwqfY',
+                //you can use libraries: ['places']
+            }
+        ]
     ],
 
     axios: {
