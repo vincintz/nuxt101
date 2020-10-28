@@ -1,7 +1,6 @@
 <template>
     <div>
-        <h1>Dad Jokes</h1>
-        <p>This is a website... I think.</p>
+        <input type="file" @change="doSomething" accept=".csv" />
         <hr/>
         <vue-excel-editor v-model="jsondata">
             <vue-excel-column field="user"   label="User" />
@@ -11,6 +10,8 @@
             <vue-excel-column field="age"    label="Age" />
             <vue-excel-column field="birth"  label="Date Of Birth" />
         </vue-excel-editor>
+        <hr/>
+        <textarea name="" id="" cols="80" rows="10" v-model="content"></textarea>
     </div>
 </template>
 
@@ -18,7 +19,7 @@
 export default {
     head() {
         return {
-            title: "NUXT101 - About",
+            title: "NUXT101 - Import",
             meta: [
                 {
                     hid: "description",
@@ -29,8 +30,21 @@ export default {
         }
     },
     data: () => ({
+        content: '123',
         jsondata: [
         ]
-    })
+    }),
+    methods: {
+        doSomething(e) {
+            var files = e.target.files || e.dataTransfer.files;
+            if (!files.length)
+                return;
+            var reader = new FileReader();
+            reader.readAsText(files[0], "UTF-8");
+            reader.onload = e => {
+                this.content = e.target.result;
+            }
+        }
+    }
 }
 </script>

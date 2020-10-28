@@ -24,6 +24,7 @@ export default {
 
     plugins: [
         '~/plugins/fontawesome.js',
+        { src: '~/plugins/VueExcelEditor.js', mode: 'client' },
     ],
 
     components: true,
