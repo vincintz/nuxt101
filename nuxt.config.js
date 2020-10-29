@@ -23,7 +23,7 @@ export default {
     ],
 
     plugins: [
-        '~/plugins/fontawesome.js',
+        { src: '~/plugins/fontawesome.js', mode: 'client' },
         { src: '~/plugins/VueExcelEditor.js', mode: 'client' },
     ],
 
